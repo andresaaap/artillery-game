@@ -1,0 +1,18 @@
+<p>artillery-controllers works!</p>
+  <mat-form-field class="example-full-width">
+    <mat-label>Initial speed m/s</mat-label>
+    <input matInput placeholder="10" value="">
+  </mat-form-field>
+
+  <button mat-raised-button>Basic</button>
+	<mat-slider
+	    class="example-margin"
+	    [disabled]="disabled"
+	    [max]="max"
+	    [min]="min"
+	    [step]="step"
+	    [discrete]="thumbLabel"
+	    [showTickMarks]="showTicks">
+	  <input matSliderThumb>
+	</mat-slider>
+
