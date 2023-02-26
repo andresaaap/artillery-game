@@ -42,9 +42,31 @@ class ApplicationServer {
     }
 
     getJoinGame() {
-        this.app.get("/joingame", async (req, res) => {
-            if(true) {
+        this.app.post("/joingame", async (req, res) => {
+
+            if(req.body.player) {
+                var playerId = req.body.player;
+                this.gameManager.createGame(playerId);
                 return res.status(200).send("hello");
+            }
+            
+            else {
+                return res.status(404).send("Block Not Found! Review the Parameters!");
+            }
+            
+        });
+    }
+
+    postPlay() {
+        this.app.get("/play", async (req, res) => {
+            if(req.body.gameId) {
+                var gameStatus = "";
+                if (req.body.player) {
+                    if (req.body.result) {
+                        gameStatus = gameManager.play(req.body.gameId, req.body.player, req.body.result);
+                    }
+                }
+                return res.status(200).send(gameStatus);
             }
             
             else {

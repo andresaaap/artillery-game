@@ -14,6 +14,7 @@ class GameManager {
     constructor() {
         this.players = new Map();
         this.games = new Map();
+        this.counter = 0;
     }
 
     /**
@@ -30,12 +31,22 @@ class GameManager {
         }
         else {
             var newGame = new Game.Game();
-            this.games.set(pplayer, newGame);
+            this.games.set(this.createRandomId(), newGame);
         }
     }
 
-    //Play
+    createRandomId(){
+        var newId = "game" + this.counter;
+        this.counter++;
+        return newId;
 
+    }
+
+    //Play
+    play(pgameId, pplayer, presult){
+        var gameSelected = this.games.get(pgameId);
+        return gameSelected.play(pplayer, presult);
+    }
 
     //end the game
 
