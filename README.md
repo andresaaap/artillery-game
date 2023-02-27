@@ -46,38 +46,7 @@ $ node server.js
 $ ng serve --open
 ```
 
-### Documentation
+### Architecture and design
 
-Please see the [Official Truffle Documentation](https://trufflesuite.com/docs/) for guides, tips, and examples.
-
-### Development
-
-We welcome pull requests. To get started, just fork this repo, clone it locally, and run:
-
-```shell
-# Install
-npm install -g yarn
-yarn bootstrap
-
-# Test
-yarn test
-
-# Adding dependencies to a package
-cd packages/<truffle-package>
-yarn add <npm-package> [--dev] # Use yarn
-```
-
-If you'd like to update a dependency to the same version across all packages, you might find [this utility](https://www.npmjs.com/package/lerna-update-wizard) helpful.
-
-_Notes on project branches:_
-
-- `master`: Stable, released version (v5)
-- `beta`: Released beta version
-- `develop`: Work targeting stable release (v5)
-- `next`: Not currently in use
-
-Please make pull requests against `develop`.
-
-There is a bit more information in the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
-
-### License
+- Web server backend: It is based on NodeJS, javascript and ExpressJS. I decided to use this one because I have lot of practice with it and I can develop very fast in using these technologies.
+- Frontend: This is based in Angular because it is a well known framework. I have experience with it and I choose it over React because of this. I added some buttons to simulate the game to prove that the Angular app is working and is integrated with the web server. Because of time limitations I couldn't integrate the video game to the angular app. The basic video game can be found in simple-gravity-example1.html, which is not the final game but a proof of concept. I decided to create the game in javascript Canvas because I created one video game like that during the Front-end Nanodegree.
