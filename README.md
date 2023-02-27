@@ -18,26 +18,33 @@ browser game mimicking the classic two-player, turn-based artillery game, based 
 $ npm install
 ```
 
-4. Run the web server for the backend
+4. Change working directory to the frontend-artillery
+
+5. Install dependencies
+
+```
+$ npm install
+```
+
+### Quick Usage
+
+1. Open the terminal
+
+2. Change working directory to the root directory of the project
+
+3. Run the web server for the backend
 
 ```
 $ node server.js
 ```
 
-### Quick Usage
+5. Change working directory to the frontend-artillery
 
-For a default set of contracts and tests, run the following within an empty project directory:
+6. Run the angular application
 
 ```
-$ truffle init
+$ ng serve --open
 ```
-
-From there, you can run `truffle compile`, `truffle migrate` and `truffle test` to compile your contracts, deploy those contracts to the network, and run their associated unit tests.
-
-Truffle comes bundled with a local development blockchain server that launches automatically when you invoke the commands above. If you'd like to [configure a more advanced development environment](https://trufflesuite.com/docs/truffle/reference/configuration) we recommend you install the blockchain server separately by running `npm install -g ganache` at the command line.
-
-- [ganache](https://github.com/trufflesuite/ganache): a command-line version of Truffle's blockchain server.
-- [ganache-ui](https://github.com/trufflesuite/ganache-ui): A GUI for the server that displays your transaction history and chain state.
 
 ### Documentation
 
