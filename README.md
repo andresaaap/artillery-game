@@ -28,6 +28,8 @@ $ npm install
 
 ### Quick Usage
 
+**You can watch this [demo](https://youtu.be/aHbmS6fa5g4) to see how the app works and how to use it**
+
 1. Open the terminal
 
 2. Change working directory to the root directory of the project
