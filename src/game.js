@@ -12,8 +12,11 @@ class Game {
     }
 
     addPlayer(pplayer){
+        console.log("addPlayer");
+        console.log(pplayer);
         this.players.push(pplayer);
-        if (this.players.length == 1) {
+        console.log(this.players);
+        if (this.players.length == 2) {
             this.status = "in_play";
             this.turn = this.randomPlayer();
         }
@@ -28,13 +31,19 @@ class Game {
     }
 
     randomPlayer(){
-        return this.windMagnitude = 10;
+        console.log("randomPlayer");
+        console.log(this.players[0]);
+        return this.turn = this.players[0];
     }
 
     play(pplayer, presult){
-        if (this.turn == pplayer) {
+        console.log("play pplayer");
+        console.log(pplayer);
+        console.log("play this.turn");
+        console.log(this.turn);
+        if (this.turn.id == pplayer) {
             if (presult == "missed") {
-                if (this.players[0] == this.turn) {
+                if (this.players[0].id == this.turn.id) {
                     this.turn = this.players[1];
                 }
                 else {

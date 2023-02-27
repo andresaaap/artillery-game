@@ -1,5 +1,9 @@
 <h1>{{title}}</h1>
-
+<mat-form-field class="example-full-width">
+	<mat-label>Player Id</mat-label>
+	<input matInput placeholder="player12" [(ngModel)]="player.id">
+</mat-form-field>
+<button mat-raised-button (click)="createGame()">Register</button>
 <app-artillery-controllers></app-artillery-controllers>
 
 <router-outlet></router-outlet>

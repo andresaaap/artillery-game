@@ -16,3 +16,10 @@
 	  <input matSliderThumb>
 	</mat-slider>
 
+	<mat-form-field class="example-full-width">
+    <mat-label>Simulate play</mat-label>
+    <input matInput placeholder="10" [(ngModel)]="simulateResult">
+  </mat-form-field>
+
+  <button mat-raised-button (click)="play()">Simulate</button>
+

@@ -1,4 +1,5 @@
 const express = require('express');
+var cors = require('cors')
 bodyParser = require("body-parser");
 const GameManager = require('./src/game_manager.js');
 port = 8080;
@@ -26,12 +27,14 @@ class ApplicationServer {
     }
 
     initExpressMiddleWare() {
+        this.app.use(cors())
         this.app.use(bodyParser.urlencoded({extended:true}));
         this.app.use(bodyParser.json());
     }
 
     initEndpoints() {
         this.getJoinGame();
+        this.postPlay();
     }
 
     start() {
@@ -43,11 +46,12 @@ class ApplicationServer {
 
     getJoinGame() {
         this.app.post("/joingame", async (req, res) => {
+            console.log(req.body);
 
-            if(req.body.player) {
-                var playerId = req.body.player;
-                this.gameManager.createGame(playerId);
-                return res.status(200).send("hello");
+            if(req.body.id) {
+                var playerId = req.body.id;
+                var newGame = this.gameManager.createGame(playerId);
+                return res.status(200).json(newGame);
             }
             
             else {
@@ -58,12 +62,15 @@ class ApplicationServer {
     }
 
     postPlay() {
-        this.app.get("/play", async (req, res) => {
+        this.app.post("/play", async (req, res) => {
+            console.log("sads");
+            console.log(req.body);
+            var gameStatus = "";
             if(req.body.gameId) {
-                var gameStatus = "";
-                if (req.body.player) {
+                
+                if (req.body.id) {
                     if (req.body.result) {
-                        gameStatus = gameManager.play(req.body.gameId, req.body.player, req.body.result);
+                        gameStatus = this.gameManager.play(req.body.gameId, req.body.id, req.body.result);
                     }
                 }
                 return res.status(200).send(gameStatus);

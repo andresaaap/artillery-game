@@ -22,17 +22,22 @@ class GameManager {
      */
     createGame(pplayer) {
         var newPlayer = new Player.Player(pplayer);
-
+        var gameSelected;
         if (this.games.size > 0) {
             for (let [key, game] of this.games) {
                 game.status = "waiting_players";
                 game.addPlayer(newPlayer);
+                gameSelected = game;
             }
         }
         else {
             var newGame = new Game.Game();
             this.games.set(this.createRandomId(), newGame);
+            newGame.addPlayer(newPlayer);
+            gameSelected = newGame;
         }
+
+        return gameSelected;
     }
 
     createRandomId(){

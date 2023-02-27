@@ -10,6 +10,9 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
+
 
 
 @NgModule({
@@ -24,7 +27,9 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonToggleModule,
     MatButtonModule,
     MatSliderModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

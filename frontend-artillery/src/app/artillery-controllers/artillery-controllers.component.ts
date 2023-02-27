@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { GameService } from '../game.service';
+import { Game } from '../model/game';
 
 @Component({
   selector: 'app-artillery-controllers',
@@ -12,5 +14,16 @@ export class ArtilleryControllersComponent {
     showTicks = false;
     step = 1;
     thumbLabel = false;
-    value = 0;
+    simulateResult = "s";
+    games: Game[] = [];
+    
+
+    constructor(private gameService: GameService) {}
+
+    play(): void {
+        this.gameService.play("player1").subscribe(result => {
+          console.log(result);
+        });;
+    }
+
 }
