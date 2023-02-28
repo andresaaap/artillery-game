@@ -1,20 +1,29 @@
-<p>artillery-controllers works!</p>
-  <mat-form-field class="example-full-width">
-    <mat-label>Initial speed m/s</mat-label>
-    <input matInput placeholder="10" value="">
-  </mat-form-field>
+<section>
+	<h2 class="subsection-title">Controllers</h2>
 
-  <button mat-raised-button>Basic</button>
-	<mat-slider
-	    class="example-margin"
-	    [disabled]="disabled"
-	    [max]="max"
-	    [min]="min"
-	    [step]="step"
-	    [discrete]="thumbLabel"
-	    [showTickMarks]="showTicks">
-	  <input matSliderThumb>
-	</mat-slider>
+	<div class="controllers-container">
+		<mat-form-field class="example-full-width">
+	    <mat-label>Initial speed m/s</mat-label>
+	    <input matInput placeholder="e.g. 10" value="">
+	  </mat-form-field>
+
+	  <div class="slider-container">
+		    <label for="angle-slider">Canon angle</label>
+		    <mat-slider
+				    class="example-margin"
+				    [disabled]="disabled"
+				    [max]="max"
+				    [min]="min"
+				    [step]="step"
+				    [discrete]="thumbLabel"
+				    [showTickMarks]="showTicks">
+				  <input matSliderThumb name="angle-slider">
+				</mat-slider>
+		</div>
+
+		<button mat-raised-button>Fire!!!</button>
+			
+	</div>
 
 	<mat-form-field class="example-full-width">
     <mat-label>Simulate play</mat-label>
@@ -22,4 +31,7 @@
   </mat-form-field>
 
   <button mat-raised-button (click)="play()">Simulate</button>
+	
+</section>
+
 

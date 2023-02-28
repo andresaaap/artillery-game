@@ -9,7 +9,7 @@ import { Player } from './model/player';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Arillery video game';
+  title = 'Artillery video game';
 
   games: Game[] = [];
   player: Player = {id: ""};
