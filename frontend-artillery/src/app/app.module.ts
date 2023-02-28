@@ -12,14 +12,16 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GameScoreBoardComponent } from './game-score-board/game-score-board.component'
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArtilleryControllersComponent
+    ArtilleryControllersComponent,
+    GameScoreBoardComponent
   ],
   imports: [
     BrowserModule,

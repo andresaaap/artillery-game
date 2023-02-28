@@ -1,0 +1,17 @@
+.game-board-container {
+	display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.game-board-egde-col {
+	width: 40%;
+}
+
+.turn {
+    background-color: greenyellow;
+}
+
+.game-board-center-col {
+	width: 20%;
+}
